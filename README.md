@@ -1,2 +1,1 @@
-This repo is all about the use of bash shell
-
+This is new project about shell permission
