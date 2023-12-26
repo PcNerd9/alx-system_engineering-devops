@@ -17,5 +17,5 @@ do
 	then
 		echo "bad luck from Italy"
 	fi
-	a=$(($a + 1))
+	a=$((a + 1))
 done

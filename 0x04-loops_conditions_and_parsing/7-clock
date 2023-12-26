@@ -11,7 +11,7 @@ do
 	while [ $b -lt 60 ]
 	do
 		echo $b
-		b=$(($b + 1))
+		b=$((b + 1))
 	done
-	a=$(($a + 1))
+	a=$((a + 1))
 done
