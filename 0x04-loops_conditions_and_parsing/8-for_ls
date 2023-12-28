@@ -2,7 +2,7 @@
 #displays the content of the current directory
 #in a list format
 #where only the part of the name after dash is displayed
-for content in $(find ./ | cut -d - -f 2) 
+for content in $(ls | cut -d - -f 2) 
 do
 	echo "$content"
 done
