@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#extract the ip and the http_code of a apache log file
+
+awk '{print $1 " " $9}' ./apache-access.log

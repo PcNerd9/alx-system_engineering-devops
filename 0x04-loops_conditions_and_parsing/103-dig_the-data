@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#extract the ip and http status code from a apache log file and
+#sort it form the one with the greatest number of occurence
+
+awk '{print $1 " " $9}' ./apache-access.log | sort | uniq -c | sort -nr
