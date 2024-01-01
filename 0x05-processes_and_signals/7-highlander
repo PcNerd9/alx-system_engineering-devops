@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#displays a string and another string when it recieve a SIGTERM signal
+trap 'echo "I am invincible!!!"' SIGTERM
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done;
