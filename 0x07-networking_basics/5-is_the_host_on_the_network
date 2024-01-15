@@ -2,7 +2,7 @@
 #pings an IP address passed as an argument
 
 IPADDRESS=$1
-if  [ "$IPADDRESS" -eq "" ];
+if  [ "$IPADDRESS" = "" ];
 then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 else
