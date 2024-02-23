@@ -1,4 +1,6 @@
+#kill a program
+
 exec { 'kill_process':
-  command    => 'pkill -f killmenow',
+  command    => '/usr/bin/pkill -f killmenow',
 
 }
