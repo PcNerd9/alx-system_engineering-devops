@@ -9,3 +9,9 @@ file_line {'modify_passwordauthentication':
   line => 'PasswordAuthentication no',
   match => '^PasswordAuthentication yes',
 }
+
+file_line {'modify_identify_key':
+  path => '/etc/ssh/ssh_config',
+  line => 'IdentityFile ~/.ssh/id_rsa',
+  match => '^IdentityFile ~/ssh/school',
+}
