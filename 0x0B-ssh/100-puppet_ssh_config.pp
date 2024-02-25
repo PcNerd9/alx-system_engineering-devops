@@ -1,6 +1,11 @@
--- configure the /etc/ssh/ssh_config
+# configure the /etc/ssh/ssh_config
 
-file {'modify_password':
+file {'/etc/ssh/ssh_config':
+  ensure => present,
+}
+
+file_line {'modify_passwordauthentication':
   path    => '/etc/ssh/ssh_config',
-  content => template('ssh_config.erb')
+  line => 'PasswordAuthentication no',
+  match => '^PasswordAuthentication yes',
 }
