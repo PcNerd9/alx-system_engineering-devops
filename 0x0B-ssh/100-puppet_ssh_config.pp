@@ -12,6 +12,6 @@ file_line {'modify_passwordauthentication':
 
 file_line {'modify_identify_key':
   path => '/etc/ssh/ssh_config',
-  line => 'IdentityFile ~/.ssh/id_rsa',
-  match => '^IdentityFile ~/ssh/school',
+  line => 'IdentityFile ~/.ssh/school',
+  match => '^IdentityFile ~/ssh/id_rsa',
 }
