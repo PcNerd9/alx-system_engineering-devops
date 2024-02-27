@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#install nginx to the server
+
+sudo apt install -y nginx
