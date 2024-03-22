@@ -1,1 +1,1 @@
-Configuration Management tool puppet
+This repo let me raps the concept of configuration management tool puppet
