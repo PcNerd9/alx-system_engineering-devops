@@ -1,3 +1,4 @@
 #!/usr/bin/bash
 
-echo $0
+string="line no1 \nline no2\nline no3\nline no4"
+sed -ie "s@testing@${string}@g" testing
