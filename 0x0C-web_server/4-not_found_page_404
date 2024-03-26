@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#install nginx to the server
+
+sudo apt install -y update
+sudo apt install -y nginx
+echo "Hello World!" >> /var/www/html/index.nginx-debian.html
+sudo chmod -R 777 /usr/share/nginx/html
+
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
+sudo sed -i "54i error_page 404 /404.html;" /etc/nginx/sites-available/example.com
+sudo sed -i "55i location = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/default
+sudo service nginx restart
