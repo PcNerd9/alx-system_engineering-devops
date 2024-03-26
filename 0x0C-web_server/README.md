@@ -1,1 +1,1 @@
-The repo the tasks that makes me create a server
+This repo contain tasks that configure an nginx web server
