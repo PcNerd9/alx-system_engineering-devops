@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+value=$(hostname)
+echo $value
