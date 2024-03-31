@@ -8,11 +8,6 @@ sudo chmod -R 777 /var/www/
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sudo chmod -R 777 /usr/share/nginx/html
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
-sudo sed -i 's/location \/ /location \/redirect_me/g' /etc/nginx/sites-available/default
-sudo sed -i '49i \\t\trewrite ^ https://www.youtube.com/watch?v=-dbd4kz9S0k permanent;' /etc/nginx/sites-available/default
-sudo sed -i "54i error_page 404 /404.html;" /etc/nginx/sites-available/default
-sudo sed -i "55i location = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/default
-sudo sed -i "57i add_header  X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+sudo sed -i "47i add_header  X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo nginx -t
 sudo service nginx start
-
