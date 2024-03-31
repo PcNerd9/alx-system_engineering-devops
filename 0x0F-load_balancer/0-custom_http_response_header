@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #install nginx to the server
 
-sudo apt install -y
-sudo apt install -y nginx
+sudo apt-get update -y
+sudo apt-get install -y nginx
 sudo chown "$USER":"$USER" /var/www/
 sudo chmod -R 777 /var/www/
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
