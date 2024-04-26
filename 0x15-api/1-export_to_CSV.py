@@ -33,10 +33,10 @@ def main():
     data = []
     for detail in employee_todos:
         dic = {}
-        dic['userid'] = employee_profile['id']
-        dic['Username'] = employee_profile['username']
-        dic['Status'] = detail['completed']
-        dic['Title'] = detail['title']
+        dic['userid'] = "{}".format(employee_profile['id'])
+        dic['Username'] = "{}".format(employee_profile['username'])
+        dic['Status'] = "{}".format(detail['completed'])
+        dic['Title'] = "{}".format(detail['title'])
         data.append(dic)
     fieldnames = ["userid", "Username", "Status", "Title"]
     with open("{}.csv".format(userid), "w") as csvfile:
