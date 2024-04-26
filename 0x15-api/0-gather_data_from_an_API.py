@@ -29,7 +29,8 @@ def main():
     completed_todos = [detail for detail in employee_todos
                        if detail['completed'] is True]
     completed_task_len = len(completed_todos)
-    print("Employee {} is done with tasks({}/{}):".format(employee_name, completed_task_len, todos_lenght))
+    print("Employee {} is done with tasks({}/{}):".format(
+        employee_name, completed_task_len, todos_lenght))
     for todo in completed_todos:
         print(f"\t {todo['title']}")
 
