@@ -6,8 +6,8 @@ completed todos
 """
 
 
-import requests
 import json
+import requests
 import sys
 
 
@@ -29,8 +29,7 @@ def main():
     completed_todos = [detail for detail in employee_todos
                        if detail['completed'] is True]
     completed_task_len = len(completed_todos)
-    print(f"Employee {employee_name} is done with\
-            tasks({completed_task_len}/{todos_lenght}):")
+    print("Employee {} is done with tasks({}/{}):".format(employee_name, completed_task_len, todos_lenght))
     for todo in completed_todos:
         print(f"\t {todo['title']}")
 
