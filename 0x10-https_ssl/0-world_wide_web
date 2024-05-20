@@ -8,7 +8,7 @@ display_info () {
 	then
 		record_type=$(echo $result | awk '{print $7}')
 		address=$(echo $result | awk '{print $8}')
-		echo "The subdomain $1 is a $record_type and points to $address"
+		echo "The subdomain $1 is a $record_type record and points to $address"
 	fi
 }
 
