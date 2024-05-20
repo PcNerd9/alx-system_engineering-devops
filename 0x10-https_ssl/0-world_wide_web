@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #displays information about subdomains of a domain
 
 display_info () {
