@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+#displays information about subdomains of a domain
+
+display_info () {
+	full_path="$1.$2"
+	result=$(dig $full_path | grep -A1 'ANSWER SECTION:')
+	if [ "$result" ]
+	then
+		record_type=$(echo $result | awk '{print $7}')
+		address=$(echo $result | awk '{print $8}')
+		echo "The subdomain $1 is a $record_type and points to $address"
+	fi
+}
+
+if [ -z "$1" ]
+then
+	echo "Usage 0-world_wide_web domain [subdomain]"
+	exit 1
+fi
+if [ "$2" ]
+then
+	display_info "$2" "$1"
+else
+	display_info "www" "$1"
+	display_info "lb-01" "$1"
+	display_info "web-01" "$1"
+	display_info "web-02" "$1"
+fi
+
