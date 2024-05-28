@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#check if Nginx is installed
+if ! command -v nginx &> /dev/null; then
+	exit 1
+fi
+
+#Ensure the nginx user exits
+if ! id -u uginx &> /dev/null; then
+	useradd -r -d /var/www -s /sbin/nologin nginx
+fi
+
+sed -i 's/^user .*/user nginx;/' "etc/nginx/nginx.conf"
+sed -i 's/^listen 80;/listen 8080;/' /etc/nginx/sites-available/defaut
+
+sudo service nginx restart
