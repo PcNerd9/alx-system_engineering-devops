@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#generates a MySQL dump and creates a compressed archive out of it
+
+DAY=$(date +%d)
+MONTH=$(date +%m)
+YEAR=$(date +%Y)
+sudo mysqldump -u root -p"$1" --all-databases | tee backup.sql
+tar -czvf "$DAY-$MONTH-$YEAR.tar.gz" ./backup.sql
