@@ -12,7 +12,9 @@ def number_of_subscribers(subreddit):
     query the Reddit API with the subreddit parameter
     """
     url = f"https://www.reddit.com/subreddits/search.json?q={subreddit}"
-    response = requests.get(url)
+    response = requests.get(url, allow_redirects=False)
+    if (response.status_code != 200):
+        return 0
     subscriber = 0
     json_data = response.json()
     children = json_data['data']['children']
