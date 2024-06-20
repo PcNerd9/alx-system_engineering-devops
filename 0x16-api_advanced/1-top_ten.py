@@ -15,16 +15,26 @@ def top_ten(subreddit):
     """
     url = "https://www.reddit.com/r/{}/new.json".format(subreddit)
 
-    response = requests.get(url)
+    response = requests.get(url, allow_redirects=False)
     if response.status_code != 200:
         print(None)
         return
     count = 0
     json_data = response.json()
-    children = json_data['data']['children']
+    data = json_data.get('data', None)
+    if data is None:
+        print(None)
+        return
+    children = json_data.get('children', None)
+    if children is None:
+        print(None)
+        return
     for child in children:
         if (count >= 10):
             break
         count = count + 1
-        if (child['data']['subreddit'] == subreddit):
-            print(child['data']['title'])
+        try:
+            if (child['data']['subreddit'] == subreddit):
+                print(child['data']['title'])
+        except Exception as e:
+            break
