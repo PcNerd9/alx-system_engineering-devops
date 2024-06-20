@@ -25,7 +25,7 @@ def top_ten(subreddit):
     if data is None:
         print(None)
         return
-    children = json_data.get('children', None)
+    children = data.get('children', None)
     if children is None:
         print(None)
         return
@@ -33,8 +33,5 @@ def top_ten(subreddit):
         if (count >= 10):
             break
         count = count + 1
-        try:
-            if (child['data']['subreddit'] == subreddit):
-                print(child['data']['title'])
-        except Exception as e:
-            break
+        if (child['data']['subreddit'] == subreddit):
+            print(child['data']['title'])
